@@ -77,6 +77,20 @@ def toggle_text_color(icon, _item):
         text_color = (255, 255, 255)  # White
 
 
+
+# =========================
+# Open WinMemoryCleaner
+# =========================
+
+def open_win_memory_cleaner(icon, _item):
+    app_path = r"C:\Users\razda\WinMemoryCleaner.exe"
+
+    try:
+        subprocess.Popen([app_path])
+    except OSError as e:
+        print(f"Could not launch WinMemoryCleaner: {e}")
+
+
 # =========================
 # Toggle Windows display scale
 # =========================
