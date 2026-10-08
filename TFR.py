@@ -5,6 +5,7 @@ import time
 import threading
 import subprocess
 import sys
+import os
 
 
 # =========================
@@ -86,9 +87,10 @@ def open_win_memory_cleaner(icon, _item):
     app_path = r"C:\Users\razda\WinMemoryCleaner.exe"
 
     try:
-        subprocess.Popen([app_path])
+        os.startfile(app_path, "runas")
     except OSError as e:
         print(f"Could not launch WinMemoryCleaner: {e}")
+
 
 
 # =========================
@@ -200,7 +202,7 @@ def create_taskbar_icon():
     menu = (
         pystray.MenuItem("Toggle Text Color", toggle_text_color),
         pystray.MenuItem("Toggle Display Scale", toggle_display_scale),
-        pystray.MenuItem("Open WinMemoryCleaner", open_win_memory_cleaner),
+        pystray.MenuItem("Open WMC", open_win_memory_cleaner),
         pystray.MenuItem("Exit", exit_program)
     )
 
