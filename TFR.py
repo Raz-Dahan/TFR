@@ -200,6 +200,7 @@ def create_taskbar_icon():
     menu = (
         pystray.MenuItem("Toggle Text Color", toggle_text_color),
         pystray.MenuItem("Toggle Display Scale", toggle_display_scale),
+        pystray.MenuItem("Open WinMemoryCleaner", open_win_memory_cleaner),
         pystray.MenuItem("Exit", exit_program)
     )
 
